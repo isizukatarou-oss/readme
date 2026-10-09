@@ -20,5 +20,6 @@
  ７．Gitに初めてのアップロードを`git push -u origin main`でする。
 
  ※もし、アップロード前にReadme.mdを変更している場合、以下のコマンドでリベースを実行する。
+ 
 `git pull --rebase origin main`
  
