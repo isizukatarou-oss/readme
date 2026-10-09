@@ -15,4 +15,10 @@
  
  ５．ブランチ名を`git branch -M main`で main にする。
  
- ６．
+ ６．GitHubリポジトリへ`git remote add origin https://github.com/ユーザー名/リポジトリ名.git`で接続する。
+
+ ７．Gitに初めてのアップロードを`git push -u origin main`でする。
+
+ ※もし、アップロード前にReadme.mdを変更している場合、以下のコマンドでリベースを実行する。
+`git pull --rebase origin main`
+ 
