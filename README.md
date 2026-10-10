@@ -1,13 +1,13 @@
 ## Git基本操作
 
 ・リモートリポジトリを取得する。
+	
 	git clone リポジトリURL
 
 ・最新のmainを取得する。
 
-	`git switch main`
-	
-	`git pull origin main`
+	git switch main
+	git pull origin main
 
 ・自作業ブランチをローカルリポジトリで作成する。
 
