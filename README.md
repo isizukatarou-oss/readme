@@ -1,30 +1,28 @@
-# 初回リポジトリ作成とコミット
-１．カレントディレクトリでコマンドプロンプトを開く。
+#Git基本操作
+・リモートリポジトリを取得する。
+	`git clone リポジトリURL`
 
-２．Gitリポジトリを`git init`で初期化する。
+・最新のmainを取得する。
+	`git switch main`
+	`git pull origin main`
 
-３．アップロードするファイルを`git add .`で登録する。
+・自作業ブランチをローカルリポジトリで作成する。
+	`git switch -c 作業ブランチ名`
 
-４．最初のコミットを`git commit -m "コメント"`で作成する。
+・変更コードをローカルリポジトリにコミットする。
+	`git add .` //特定ファイルのみ追加する場合`git add ファイル名`とする。
+	`git status` //意図しないファイルを追加する可能性もあるので、コミット前に確認する。
+	`git commit -m "コミットコメント"` 
 
-※もし、`Author identity unknown`と出力された場合、以下のコマンドでユーザ名とメールアドレスを設定する。
+・リモートリポジトリにコミットした変更をプッシュする。
+	`git push -u origin 作業ブランチ名` //`-u origin 作業ブランチ名`はリモートブランチを追跡先として設定するため、初回プッシュで`-u`を指定すれば、以降は`git push`だけでプッシュできる。
 
-　`git config --global user.name "GitHubのユーザー名"`
- 
-　`git config --global user.email "GitHubに登録したメールアドレス"`
- 
- ５．ブランチ名を`git branch -M main`で main にする。
- 
- ６．GitHubリポジトリへ`git remote add origin https://github.com/ユーザー名/リポジトリ名.git`で接続する。
+・プルリクエストを作成する。
+	GitHubのリポジトリ画面からPull Requestを作成する
 
- ７．Gitに初めてのアップロードを`git push -u origin main`でする。
+・マージ後にリポジトリの取得、最新のmainの取得、自作業ブランチの作成する。
 
- ※もし、アップロード前にReadme.mdを変更している場合、以下のコマンドでリベースを実行する。
- 
-`git pull --rebase origin main`
- 
-
-# チーム開発で使うコマンドの流れ
+#チーム開発流れ
 １．現在のブランチを`git switch main`でmainブランチにする。
 
 ２．最新のコードを`git pull origin main`で取得する。
@@ -36,3 +34,23 @@
 ５．変更を`git add .`、`git commit -m "機能追加"`でコミットする。
 
 ６．GitHubにブランチを`git push -u origin feature/workBranch`でアップロードする。
+
+#初回注意点
+・ローカルリポジトリを初回作成し、GitHubにプッシュする。
+
+	`git init` //作業するディレクトリで実行する。
+
+	`git add .`
+
+	`git commit -m "コメント"` //初回はこの後にユーザ名とメールアドレス登録が必要となる。
+
+		`git config --global user.name "GitHubのユーザ名"`
+
+		`git config --global user.email "GitHubに登録したメールアドレス"`
+
+	`git branch -M main` //mainブランチ
+
+	`git remote add origin https://github.com/ユーザ名/リポジトリ名.git`
+
+	`git push -u origin main` //アップロード前にReadme.mdを変更していれば、リベースを`git pull --rebase origin main`でする。
+
