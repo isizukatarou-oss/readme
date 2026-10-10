@@ -29,8 +29,8 @@
 
 ・古いローカルのブランチを削除する。
 
-	git branch
-	git branch -d 削除するブランチ
+	git branch // ローカルブランチ一覧が出力される。
+	git branch -d 削除するローカルブランチ
 
 ## チーム開発流れ
 
