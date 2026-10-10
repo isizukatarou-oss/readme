@@ -1,8 +1,7 @@
 ## Git基本操作
 
 ・リモートリポジトリを取得する。
-
-	`git clone リポジトリURL`
+	git clone リポジトリURL
 
 ・最新のmainを取得する。
 
