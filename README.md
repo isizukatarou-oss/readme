@@ -23,3 +23,16 @@
  
 `git pull --rebase origin main`
  
+
+# チーム開発で使うコマンドの流れ
+１．現在のブランチを`git switch main`でmainブランチにする。
+
+２．最新のコードを`git pull origin main`で取得する。
+
+３．自分の作業ブランチを`git switch -c feature/workBranch`で作成する。
+
+４．コードを変更した後、`git status`、`git diff`で変更内容を確認する。
+
+５．変更を`git add .`、`git commit -m "機能追加"`でコミットする。
+
+６．GitHubにブランチを`git push -u origin feature/workBranch`でアップロードする。
