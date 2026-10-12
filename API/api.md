@@ -211,3 +211,60 @@ RESTとは以下のように説明されている。
 
 	https://example.com/faborite/contents
 	※そもそも単語を連結する必要がある場合はURI設計から見直す場合もある
+
+### 単語は複数形を使う
+
+　NG
+
+	https://example.com/post/1
+
+　OK
+
+	https://example.com/posts/1
+
+### エンコードが必要な文字は使わない
+
+　エンコードがあると可読性が下がり、URIから処理が推測できない
+
+　NG
+
+	https://example.com/%TENFLOJFL$JSF3352nb%scd%
+
+### 更新がしやすい
+
+　NG
+
+	https://example.com/alpha/contents/1
+	https://example.com/beta/contents/1
+
+　OK
+
+	https://example.com/contents/1
+
+### ルールが統一されている
+
+　パラメタをパスパラメタで渡すのか、クエリパラメタで渡すかなどのルールを統一させる。
+
+	https://example.com/beta/contents/1 ## パスパラメタ
+	https://example.com/alpha/contents/?id=1 ## クエリパラメタ
+
+# HTTPメソッド
+
+URIはリソースを表し、HTTPメソッドはリソースに対しての操作を示す。
+
+具体的に以下の場合は、`/api/v1/posts/1`というリソースに対してデータを取得（GET）するようにリクエストを送っている。
+
+	GET /api/v1/posts/1
+
+同じURIに対してメソッドをかえることで操作も変えることができる。
+
+　|操作|API|
+　|---|---|
+　|記事一覧の取得|GETメソッド/ http://example.com/api/v1/posts|
+　|記事単体の取得|GETメソッド/ http://example.com/api/v1/posts/1|
+　|記事の新規作成|POSTメソッド/ http://example.com/api/v1/posts|
+　|記事の更新|PUTメソッド/ http://example.com/api/v1/posts/1|
+　|記事の削除|DELETメソッド/ http://example.com/api/v1/posts/1|
+
+
+	
