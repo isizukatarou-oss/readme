@@ -266,5 +266,59 @@ URIはリソースを表し、HTTPメソッドはリソースに対しての操�
 |記事の更新|PUTメソッド/ http://example.com/api/v1/posts/1|
 |記事の削除|DELETEメソッド/ http://example.com/api/v1/posts/1|
 
+# クエリパラメーターとパスパラメーター
 
-	
+|種類|API|
+|---|---|
+|クエリパラメーター|http://example.com/api/v1/posts?id=1|
+|パスパラメーター|http://example.com/api/v1/posts/1|
+
+クエリパラメーターとパスパラメーターの使い分け
+
+	一意なリソースを表す場合はパスパラメーターを利用
+	省略して良い場合はクエリパラメーターを利用
+
+クエリパラメーターは具体的にいうと、検索する際のリクエストは一意にパスが定まらないのでクエリパラメーターを利用する。
+
+	http:///example.com/api/v1/users?name="suzuki"
+
+### レスポンスデータのフォーマット
+
+主要なレスポンスデータは以下のフォーマットとなっている。
+
+	XML
+	JSON
+
+### XML
+
+XMLの特徴は以下の通り。
+
+	テキスト形式
+	タグで記述されている
+	タグは入れ子
+	タグに属性が付与されている
+
+	<login>
+	 <username>useremail@company.com</username>
+	 <password>mypassword</password>
+	</login>
+
+JSONの特徴は以下の通り。
+
+	テキスト形式
+	JavaScriptを基にしたフォーマット
+	XMLと比較するとデータ量が削減できる
+	オブジェクトは入れ子にできる
+
+	{
+	 user:{ "id" : "1" , "name" : "tanaka" }
+	}
+
+なお、データフォーマットをしているする際はリクエストヘッダーに記載することがお作法的とされている。
+
+	GET http://example.com/users
+	HOST : example.com
+	Acceot : application/json # JSON形式と指定した場合
+
+
+
