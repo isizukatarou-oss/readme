@@ -258,13 +258,13 @@ URIはリソースを表し、HTTPメソッドはリソースに対しての操�
 
 同じURIに対してメソッドをかえることで操作も変えることができる。
 
-　|操作|API|
-　|---|---|
-　|記事一覧の取得|GETメソッド/ http://example.com/api/v1/posts|
-　|記事単体の取得|GETメソッド/ http://example.com/api/v1/posts/1|
-　|記事の新規作成|POSTメソッド/ http://example.com/api/v1/posts|
-　|記事の更新|PUTメソッド/ http://example.com/api/v1/posts/1|
-　|記事の削除|DELETメソッド/ http://example.com/api/v1/posts/1|
+|操作|API|
+|---|---|
+|記事一覧の取得|GETメソッド/ http://example.com/api/v1/posts|
+|記事単体の取得|GETメソッド/ http://example.com/api/v1/posts/1|
+|記事の新規作成|POSTメソッド/ http://example.com/api/v1/posts|
+|記事の更新|PUTメソッド/ http://example.com/api/v1/posts/1|
+|記事の削除|DELETEメソッド/ http://example.com/api/v1/posts/1|
 
 
 	
